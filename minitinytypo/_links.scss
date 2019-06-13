@@ -16,16 +16,12 @@ a {
   
   &:hover {
     cursor: pointer;
+    color: mtt(color-link-hover);
   }
 
   &:focus {
     background-color: change-color(mtt(color-main), $lightness: 40%);
     color: white;
-  }
-
-  &:hover,
-  &:focus {
-    color: mtt(color-link-hover);
   }
 
   /**
