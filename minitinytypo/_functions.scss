@@ -24,7 +24,7 @@
   $base-font-size: mtt(font-size);
   @if mtt(font-size-factor) > 0 {
     $font-size-factor: mtt(font-size-factor) * 1vw;
-    $font-size-fluid: calc(#{$base-font-size} * #{$font-size-factor});
+    $font-size-fluid: calc(#{$base-font-size} + #{$font-size-factor});
     @return $font-size-fluid;
   }
   @return $font-size-base;
