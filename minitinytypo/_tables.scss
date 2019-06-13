@@ -1,0 +1,61 @@
+/**
+ * ======
+ * Tables
+ * ======
+ */
+@if mtt(tables) {
+
+table {
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  caption,
+  th,
+  td {
+    padding: mtt(spacing)/2;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid;
+  }
+
+  // Caption
+  caption {
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 2px solid;
+  }
+
+  // Header
+  thead {
+    th {
+      vertical-align: bottom;
+    }
+  }
+
+  // Body
+  tbody {
+    tr:hover td {
+      background-color: transparentize(mtt(color-text), 0.95);
+    }
+  }
+
+  // Footer
+  tfoot {
+    font-style: italic;
+
+    td {
+      border-bottom: 0;
+      vertical-align: top;
+    }
+  }
+
+}
+
+}

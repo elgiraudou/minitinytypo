@@ -1,0 +1,86 @@
+/**
+ * ==============
+ * Vertical rythm
+ * ==============
+ *
+ * Keeps vertical spaces between elements on a page consistent with each other.
+ */
+@if mtt(vertical-rythm) {
+
+// Headings
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-top: 0;
+}
+
+h1,
+.h1 {
+  font-size: mtt(font-size) * 2;
+  line-height: mtt(line-height);
+  margin-bottom: .75em;
+}
+
+h2,
+.h2 {
+  font-size: mtt(font-size) * 1.5;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+
+h3,
+.h3 {
+  font-size: mtt(font-size) * 1.25;
+  line-height: 1.2;
+  margin-bottom: 1.2em;
+}
+
+h4,
+.h4 {
+  font-size: mtt(font-size) * 1.1;
+  line-height: 1.364;
+  margin-bottom: 1.364em;
+}
+
+h5,
+.h5 {
+  font-size: mtt(font-size);
+  font-weight: bold;
+  margin-bottom: mtt(spacing);
+}
+
+h6,
+.h6 {
+  font-size: mtt(font-size);
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+// Content
+
+p,
+ul,
+ol,
+dl,
+dd,
+blockquote,
+address,
+pre,
+fieldset,
+figure,
+hr {
+  margin-top: 0;
+  margin-bottom: mtt(spacing);
+}
+
+}

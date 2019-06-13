@@ -1,0 +1,39 @@
+/**
+ * pre and code
+ */
+
+pre,
+code,
+var,
+samp,
+kbd,
+tt {
+  font-family: mtt(font-monospace);
+  font-size: 1em;
+}
+
+pre {
+  tab-size: 4; // reset initial value (8 is too much)
+  overflow-x: auto;
+}
+
+// Represents a span of inline text denoting textual user input from a keyboard.
+kbd {
+  white-space: nowrap;
+  padding: .1em .3em;
+  background-color: #eee;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px #fff inset;
+  color: #333;
+}
+
+// Enclose inline text which represents sample (or quoted) output from a computer program.
+samp {
+  font-weight: bold;
+}
+
+// Represents the name of a variable.
+var {
+  font-style: italic;
+}

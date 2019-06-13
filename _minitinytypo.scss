@@ -1,0 +1,37 @@
+/**
+ * ======================
+ *     Mini Tiny Typo
+ * ======================
+ * A CSS base for web editorial content, sets-up a sensible default typography.
+ *
+ * How to use:
+ *
+ * - 1) Customize with your own settings (colors, breakpoints, etc.).
+ *      Create a map variable called $minitinytypo BEFORE importing.
+ *      Check _settings.scss to see all available settings.
+ *      Each optional component can be disabled if for whatever reason you don't need it.
+ *
+ * - 2) Import this file (assuming it's located in node_modules):
+ *      @import "~minitinytypo/minitinytypo";
+ */
+
+// Required stuff
+@import
+  "minitinytypo/functions",      // Functions and mixins
+  "minitinytypo/settings",       // Settings
+  "minitinytypo/base"            // Typographical basis
+;
+
+// Optional components
+@import
+  "minitinytypo/vertical-rythm", // Vertical rythm
+  "minitinytypo/typo",           // Various elements
+  "minitinytypo/headings",       // Headings
+  "minitinytypo/links",          // Hyperlinks
+  "minitinytypo/lists",          // Lists
+  "minitinytypo/tables",         // Tables
+  "minitinytypo/code",           // Code
+  "minitinytypo/quotes",         // Quotes & citations
+  "minitinytypo/media",          // Images and Galeries
+  "minitinytypo/print"           // Print styles
+;

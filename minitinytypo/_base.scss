@@ -1,0 +1,22 @@
+/**
+ * ======
+ * Basics
+ * =======
+ */
+
+html,
+body {
+  // Ajuster l'algorithme d'amplification du texte sur certains appareils mobiles.
+  // + Orientation iOS5 font-size fix
+  text-size-adjust: 100%;
+  @media (orientation: landscape) and (max-device-width: mtt(screen-medium)) {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+body {
+  font-size: mtt-font-size();
+  line-height: mtt(line-height);
+  font-family: mtt(font-text);
+  color: mtt(color-text);
+}

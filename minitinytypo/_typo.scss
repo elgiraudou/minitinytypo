@@ -1,0 +1,146 @@
+/**
+ * ==============================
+ * Various typographical elements
+ * ==============================
+ */
+@if mtt(typo) {
+
+// Thematic break between paragraph-level elements
+hr {
+  box-sizing: content-box;
+  height: 0; // Add the correct box sizing in Firefox.
+  overflow: visible; // Show the overflow in Edge and IE.
+  border: solid;
+  border-width: 1px 0 0;
+}
+
+// Marks text that has stress emphasis.
+// Can be nested to indicate a greater degree of emphasis.
+em,
+i {
+  font-style: italic;
+}
+
+// Indicates that its contents have strong importance, seriousness, or urgency.
+strong,
+b {
+  font-weight: bold;
+}
+
+// Represents text which is marked or highlighted for reference or notation purposes.
+mark {
+  background: hsl(60, 100%, 50%);
+  color: mtt(color-text);
+}
+
+// Represent side-comments and small print.
+small {
+  font-size: 80%;
+}
+
+// Obsolete
+big {
+  font-size: 130%;
+}
+
+// Represents an abbreviation or acronym.
+// The optional title attribute can provide an expansion or description for the abbreviation.
+abbr[title],
+acronym[title] {
+  text-decoration: none;
+  border-bottom: .1em dotted;
+  cursor: help;
+}
+
+// Definition
+// Indicate the term being defined within the context of a definition phrase or sentence.
+dfn {
+  font-weight: bold;
+  font-style: italic;
+}
+
+// Del
+// Represents a document edit : a range of text that has been deleted from a document.
+// strike is deprecated.
+del,
+s,
+strike {
+  opacity: .5;
+  text-decoration: line-through;
+}
+
+// Ins
+// Represents a document edit : a range of text that has been added to a document.
+ins {
+  background-color: rgba(255, 255, 204, .5);
+  text-decoration: none;
+}
+
+// Unarticulated Annotation Element
+// Represents a span of inline text which should be rendered in a way that indicates
+// that it has a non-textual annotation. Can be used to highlight spelling mistakes.
+u {
+  text-decoration: underline;
+}
+
+// Superscript & subscript
+// Specifies inline text which is to be displayed as superscript or subscript
+// for solely typographical reasons.
+sup,
+sub {
+  position: relative;
+  font-size: 80%;
+  font-variant: normal;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+// Indicates that the enclosed HTML provides contact information
+address {
+  font-style: normal;
+}
+
+/**
+  * Typography for small screens
+  * [fr] http://www.alsacreations.com/astuce/lire/1177
+  */
+
+@media (max-width: mtt(screen-medium)) {
+
+  /* Set a maximum width of 100% for potentially problematic elements */
+  img,
+  table,
+  td,
+  blockquote,
+  code,
+  pre,
+  textarea,
+  input,
+  iframe,
+  object,
+  embed,
+  video {
+    max-width: 100% !important;
+  }
+
+  /* long words */
+  textarea,
+  table,
+  td,
+  th,
+  code,
+  samp {
+    word-wrap: break-word;
+  }
+
+}
+
+}

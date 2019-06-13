@@ -1,0 +1,51 @@
+/**
+ * Functions and mixins
+ */
+
+/**
+ * Return a value from the Minitinytypo settings
+ *
+ * @access private
+ * @param string $variable
+ * @return mixed
+ */
+@function mtt($setting) {
+  @if map-has-key($minitinytypo, $setting) {
+    @return map-get($minitinytypo, $setting);
+  }
+  @warn "Setting `#{$setting}` not found in $minitinytypo.";
+  @return null;
+}
+
+/**
+ * Returns the font-size
+ */
+@function mtt-font-size() {
+  $base-font-size: mtt(font-size);
+  @if mtt(font-size-factor) > 0 {
+    $font-size-factor: mtt(font-size-factor) * 1vw;
+    $font-size-fluid: calc(#{$base-font-size} * #{$font-size-factor});
+    @return $font-size-fluid;
+  }
+  @return $font-size-base;
+}
+
+/**
+ * Convert px to em
+ *
+ * @param int $pixels
+ *     Taille en px
+ * @param int $context
+ *     Taille de police par défaut du navigateur
+ * @return string
+       Taille en em
+ */
+@function mtt-em($pixels, $context: 16) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1em;
+}

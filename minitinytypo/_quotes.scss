@@ -1,0 +1,105 @@
+/**
+ * ============================
+ * Quotes, citations and poetry
+ * ============================
+ */
+@if mtt(quotes) {
+
+// <blockquote> indicates that the enclosed text is an extended quotation.
+// A URL for the source of the quotation may be given using the cite attribute,
+// while a text representation of the source can be given using the <cite> element.
+// <blockquote cite="https:/xxx">
+//     <p>Lorem ipsum</p>
+//     <footer>Somebody, <cite>Something</cite></footer>
+// </blockquote>
+blockquote {
+  z-index: 0; // https://github.com/tetue/tinytypo/pull/9
+  position: relative;
+  margin-left: 0;
+  margin-right: 0; // Reset margin by default in all browsers
+  padding-left: mtt(gutter);
+  border: solid mtt(color-mid);
+  border-width: 0 0 0 5px;
+
+  /*
+  &:before {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "\00AB";
+    line-height: 0;
+    font-size: 10rem; // Fix the quote size when enlarge text
+    color: fadeout(mtt(color-mid), 90%);
+  }
+  */
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  footer,
+  .src {
+    display: block;
+    font-size: 80%;
+
+    &:before {
+      content: "\2014 \00A0";
+    }
+  }
+}
+
+cite {
+  font-style: italic;
+}
+
+// *[cite]:after { content: close-quote " (" attr(cite) ")"; }
+
+// <q> indicates that the enclosed text is a short inline quotation.
+// A URL for the source of the quotation may be given using the cite attribute.
+// Most modern browsers surround the text in quotation marks.
+// <p>Somebody said <q cite="https:/xxx">Lorem ipsum</q></p>
+q {
+  quotes: "\201C""\201D""\2018""\2019";
+
+  // « » ‹ ›
+  // [en] http://en.wikipedia.org/wiki/International_variation_in_quotation_marks
+  &:before {
+    content: open-quote;
+  }
+  &:after {
+    content: close-quote;
+  }
+}
+
+// “ ” ‘ ’
+:lang(en) > q {
+  quotes: "\201C""\201D""\2018""\2019"
+}
+
+// “ ” ‘ ’
+:lang(fr) > q {
+  quotes: "\00AB\A0""\A0\00BB""\201C""\201D""\2018""\2019";
+}
+
+// « » “ ” ‘ ’
+:lang(es) > q {
+  quotes: "\00AB""\00BB""\201C""\201D";
+}
+
+// « » “ ”
+:lang(it) > q {
+  quotes: "\00AB\A0""\A0\00BB""\201C""\201D";
+}
+
+// « » “ ”
+:lang(de) > q {
+  quotes: "\00BB""\00AB""\203A""\2039"
+}
+
+// » « › ‹
+:lang(no) > q {
+  quotes: "\00AB\A0""\A0\00BB""\2039""\203A"
+}
+
+}

@@ -1,0 +1,79 @@
+/**
+ * ============
+ * Print styles
+ * ============
+ */
+@if mtt(print) {
+
+@media print {
+
+  img {
+    max-width: 100% !important;
+  }
+
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  body {
+    margin: 2cm .5cm;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  // Links
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: '';
+  }
+
+  a[rel="external"]:after {
+    content: " ("attr(href) ")";
+  }
+
+  //
+
+  pre {
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  abbr[title],
+  acronym[title] {
+    border-bottom: 0;
+
+    &:after {
+      content: " ("attr(title) ")";
+    }
+  }
+
+}
+
+}

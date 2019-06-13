@@ -1,0 +1,48 @@
+/**
+ * ===================
+ * Images and Galeries
+ * ===================
+ */
+@if mtt(media) {
+
+// List common types NIME
+// [fr] Liste des types NIME usuels
+// - application
+// - audio
+// - example
+// - image
+// - message
+// - model
+// - multipart
+// - text
+// - video
+// - vnd
+
+img {
+  max-width: 100%;
+  height: auto; // Make images responsive by default
+  vertical-align: middle;
+}
+
+audio,
+canvas,
+progress,
+video {
+  vertical-align: baseline; // Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0; // Add the correct display in iOS 4-7.
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figcaption {
+  font-size: 80%;
+}
+  
+}

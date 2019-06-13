@@ -1,0 +1,95 @@
+/**
+ * ==========
+ * Hyperlinks
+ * ==========
+ */
+@if mtt(links) {
+
+a {
+  -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
+  color: mtt(color-link);
+  text-decoration: none;
+
+  &:visited {
+    color: mtt(color-link);
+  }
+  
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    background-color: change-color(mtt(color-main), $lightness: 40%);
+    color: white;
+  }
+
+  &:hover,
+  &:focus {
+    color: mtt(color-link-hover);
+  }
+
+  /**
+    * Add unicode icons after some types of links
+    */
+
+  &[hreflang]:after,
+  &[href^="mailto:"]:after,
+  &[href^="tel:"]:after,
+  &[rel]:after {
+    font-size: 90%;
+    opacity: 0.9;
+  }
+
+  // Display lang
+  &[hreflang]:after {
+    content: "\0000a0["attr(hreflang) "]";
+    font-weight: normal;
+  }
+
+  // External
+  // ➚ http://unicode-table.com/en/279A/
+  &[rel="external"] {
+    &:after {
+      content: "\0000a0\279A";
+    }
+    &[hreflang]:after {
+      content: "\0000a0["attr(hreflang) "]\0000a0\279A";
+    }
+  }
+
+  // Mailto
+  // ✉ http://unicode-table.com/en/2709/
+  &[href^="mailto:"] {
+    &:after {
+      content: "\0000a0\2709";
+    }
+    &[hreflang]:after {
+      content: "\0000a0["attr(hreflang) "]\0000a0\2709";
+    }
+  }
+
+  // Tel
+  // ✆ http://unicode-table.com/en/2706/
+  &[href^="tel:"] {
+    &:after {
+      content: "\0000a0\2706";
+    }
+    &[hreflang]:after {
+      content: "\0000a0["attr(hreflang) "]\0000a0\2706";
+    }
+  }
+  
+  // Downloads
+  // ↧ http://unicode-table.com/en/21A7/
+  &[rel="download"] {
+    &:after {
+      content: "\0000a0\21A7";
+    }
+    &[hreflang]:after {
+      content: "\0000a0["attr(hreflang) "]\0000a0\21A7";
+    }
+  }
+
+}
+
+}
