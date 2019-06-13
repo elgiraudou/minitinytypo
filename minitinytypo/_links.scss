@@ -25,20 +25,20 @@ a {
   }
 
   /**
-    * Add unicode icons after some types of links
-    */
+   * Add unicode icons after some types of links
+   */
 
   &[hreflang]:after,
   &[href^="mailto:"]:after,
   &[href^="tel:"]:after,
   &[rel]:after {
-    font-size: 90%;
-    opacity: 0.9;
+    //font-size: 90%;
+    //opacity: 0.9;
   }
 
   // Display lang
   &[hreflang]:after {
-    content: "\0000a0["attr(hreflang) "]";
+    content: " ["attr(hreflang) "]";
     font-weight: normal;
   }
 
@@ -46,10 +46,10 @@ a {
   // ➚ http://unicode-table.com/en/279A/
   &[rel="external"] {
     &:after {
-      content: "\0000a0\279A";
+      content: " ➚";
     }
     &[hreflang]:after {
-      content: "\0000a0["attr(hreflang) "]\0000a0\279A";
+      content: " ["attr(hreflang) "] ➚";
     }
   }
 
@@ -57,10 +57,10 @@ a {
   // ✉ http://unicode-table.com/en/2709/
   &[href^="mailto:"] {
     &:after {
-      content: "\0000a0\2709";
+      content: " ✉";
     }
     &[hreflang]:after {
-      content: "\0000a0["attr(hreflang) "]\0000a0\2709";
+      content: " ["attr(hreflang) "] ✉";
     }
   }
 
@@ -68,21 +68,21 @@ a {
   // ✆ http://unicode-table.com/en/2706/
   &[href^="tel:"] {
     &:after {
-      content: "\0000a0\2706";
+      content: " ✆";
     }
     &[hreflang]:after {
-      content: "\0000a0["attr(hreflang) "]\0000a0\2706";
+      content: " ["attr(hreflang) "] ✆";
     }
   }
   
-  // Downloads
+  // Download
   // ↧ http://unicode-table.com/en/21A7/
   &[rel="download"] {
     &:after {
-      content: "\0000a0\21A7";
+      content: " ↧";
     }
     &[hreflang]:after {
-      content: "\0000a0["attr(hreflang) "]\0000a0\21A7";
+      content: " ["attr(hreflang) "] ↧";
     }
   }
 
