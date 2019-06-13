@@ -64,7 +64,7 @@ $minitinytypo-defaults: (
   color-text:         hsl(  0,   0%, 13%),
   color-mid:          hsl(  0,   0%, 40%),
   color-link:         inherit,
-  font-text:          serif,
+  font-text:          sans-serif,
   font-headings:      sans-serif,
   font-monospace:     #{monospace, monospace}, // Correct the inheritance and scaling of font size in all browsers.
   font-size:          mtt-em(16px),
