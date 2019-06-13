@@ -36,12 +36,15 @@ audio:not([controls]) {
   height: 0; // Add the correct display in iOS 4-7.
 }
 
+// Figure
+
 figure {
   margin-left: 0;
   margin-right: 0;
 }
 
 figcaption {
+  margin-top: mtt(spacing)/4;
   font-size: 80%;
 }
   
