@@ -66,7 +66,7 @@ $minitinytypo-defaults: (
   color-link:         inherit,
   font-text:          serif,
   font-headings:      sans-serif,
-  font-monospace:     "monospace, monospace", // Correct the inheritance and scaling of font size in all browsers.
+  font-monospace:     #{monospace, monospace}, // Correct the inheritance and scaling of font size in all browsers.
   font-size:          mtt-em(16px),
   font-size-factor:   0.15,
   line-height:        1.5,
@@ -86,5 +86,3 @@ $minitinytypo: () !default;
 
 // Merge defaults with $minitinytypo to create base level map
 $minitinytypo: map-merge($minitinytypo-defaults, $minitinytypo);
-
-@debug $minitinytypo;
