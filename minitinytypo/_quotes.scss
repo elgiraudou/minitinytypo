@@ -18,7 +18,7 @@ blockquote {
   margin-left: 0;
   margin-right: 0; // Reset margin by default in all browsers
   padding-left: mtt(gutter);
-  border: solid mtt(color-mid);
+  border: solid mtt(color-border);
   border-width: 0 0 0 5px;
 
   /*
@@ -30,7 +30,7 @@ blockquote {
     content: "\00AB";
     line-height: 0;
     font-size: 10rem; // Fix the quote size when enlarge text
-    color: fadeout(mtt(color-mid), 90%);
+    color: fadeout(mtt(color-border), 90%);
   }
   */
 
