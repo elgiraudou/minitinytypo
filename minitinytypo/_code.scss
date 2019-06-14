@@ -36,6 +36,14 @@ kbd {
   box-shadow:
     0px 3px 0px -2px white,
     0px 2px 0px 0px mtt(color-border);
+  transition: border 0.2s, box-shadow 0.2s;
+
+  &:active {
+    border-color: mtt(color-text);
+    box-shadow:
+      0px 3px 0px -2px white,
+      0px 2px 0px 0px mtt(color-text);
+  }
 }
 
 // Enclose inline text which represents sample (or quoted) output from a computer program.
