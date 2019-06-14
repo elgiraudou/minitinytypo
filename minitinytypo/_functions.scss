@@ -19,6 +19,9 @@
 
 /**
  * Returns the font-size
+ *
+ * @access private
+ * @return 
  */
 @function mtt-font-size() {
   $base-font-size: mtt(font-size);
@@ -31,8 +34,9 @@
 }
 
 /**
- * Convert px to em
+ * Converts px to em
  *
+ * @access private
  * @param int $pixels
  *     Taille en px
  * @param int $context
@@ -48,4 +52,26 @@
     $context: $context * 1px;
   }
   @return $pixels / $context * 1em;
+}
+
+/**
+ * Returns the base vertical spacing
+ *
+ * @access public
+ * @example
+ * margin-top: spacing(2);
+ */
+@function spacing($factor: 1) {
+  $spacing: null;
+  // Shevy's built-in function takes the proximity factor into account
+  @if (mtt(vertical-rythm)) {
+    $spacing: base-spacing($factor);
+  }
+  // Otherise let's do the math ourselves
+  @else {
+    $spacing: mtt(font-size) * mtt(line-height) * $factor;
+  }
+  // Let's convert to rem
+  //$spacing: $spacing * 1em / 1rem;
+  @return $spacing;
 }

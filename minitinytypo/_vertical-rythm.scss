@@ -4,70 +4,50 @@
  * ==============
  *
  * Keeps vertical spaces between elements on a page consistent with each other.
+ * Based on the Shevy library : https://github.com/kyleshevlin/shevy
  */
 @if mtt(vertical-rythm) {
 
-// Headings
+// Font scale presets
+$mtt-font-scales: (
+  1:  (1.382,  1.295, 1.214, 1.138, 1.067, 1), // minor_second
+  2:  (1.802,  1.602, 1.424, 1.266, 1.125, 1), // major_second
+  3:  (2.488,  2.074, 1.728, 1.44,  1.2,   1), // minor_third
+  4:  (2.5,    2.1,   1.8,   1.5,   1.25,  1), // shevy default
+  5:  (3.052,  2.441, 1.953, 1.563, 1.25,  1), // major_third
+  6:  (4.209,  3.157, 2.369, 1.777, 1.333, 1), // perfect_fourth
+  7:  (5.653,  3.998, 2.827, 1.999, 1.414, 1), // augmented_fourth
+  8:  (7.594,  5.063, 3.375, 2.25,  1.5,   1), // perfect_fifth
+  9:  (10.486, 6.554, 4.096, 2.56,  1.6,   1), // minor_sixth
+  10: (11.089, 6.854, 4.236, 2.618, 1.618, 1)  // golden_section
+);
 
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  margin-top: 0;
+// Font scale configured
+$mtt-font-scale: null;
+@if type-of(mtt(font-scale) == 'map') {
+  $mtt-font-scale: mtt(font-scale);
+}
+@if type-of(mtt(font-scale) == 'number') {
+  $mtt-font-scale: map-get($mtt-font-scales, mtt(font-scale));
 }
 
-h1,
-.h1 {
-  font-size: mtt(font-size) * 2;
-  line-height: mtt(line-height);
-  margin-bottom: .75em;
-}
+// Shevy configuration
+$shevy: (
+  base-font-size:   mtt(font-size),
+  base-line-height: mtt(line-height),
+  base-font-scale:  $mtt-font-scale,
+  margin-bottom:    true,
+  proximity:        mtt(proximity),
+  proximity-factor: .85
+);
 
-h2,
-.h2 {
-  font-size: mtt(font-size) * 1.5;
-  line-height: 1;
-  margin-bottom: 1em;
-}
+// Body: sets font-size and line-height
+@include body;
 
-h3,
-.h3 {
-  font-size: mtt(font-size) * 1.25;
-  line-height: 1.2;
-  margin-bottom: 1.2em;
-}
+// Headings: sets font-size, line-height and margin-bottom
+@include headings;
 
-h4,
-.h4 {
-  font-size: mtt(font-size) * 1.1;
-  line-height: 1.364;
-  margin-bottom: 1.364em;
-}
-
-h5,
-.h5 {
-  font-size: mtt(font-size);
-  font-weight: bold;
-  margin-bottom: mtt(spacing);
-}
-
-h6,
-.h6 {
-  font-size: mtt(font-size);
-  font-weight: bold;
-  margin-bottom: 0;
-}
-
-// Content
-
+// Content: sets margin-bottom
 p,
 ul,
 ol,
@@ -80,7 +60,7 @@ fieldset,
 figure,
 table,
 hr {
-  margin-top: 0;
+  // @include content; // Not enough elements: https://github.com/kyleshevlin/shevy/issues/12
   margin-bottom: mtt(spacing);
 }
 

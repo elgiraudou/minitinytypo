@@ -2,49 +2,43 @@
  * ========
  * Headings
  * ========
+ * For size and margins, check _vertical-rythm.scss
  */
 @if mtt(headings) {
 
 h1,
-.h1,
 h2,
-.h2,
 h3,
-.h3,
 h4,
-.h4,
 h5,
-.h5,
-h6,
-.h6 {
+h6 {
   display: block;
   padding: 0;
   font-weight: normal;
-  font-family: mtt(font-headings);
+  font-family: mtt(font-family-headings);
 }
 
-h5,
-.h5,
-h6,
-.h6 {
+h6 {
   font-weight: bold;
 }
 
 // Subtitles
 
 h1 small,
-.h1 small,
 h2 small,
-.h2 small,
 h3 small,
-.h3 small,
 h4 small,
-.h4 small,
 h5 small,
-.h5 small,
-h6 small,
-.h6 small {
+h6 small {
   font-size: 60%;
 }
+
+// Helper classes
+.h1 { @extend h1; }
+.h2 { @extend h2; }
+.h3 { @extend h3; }
+.h4 { @extend h4; }
+.h5 { @extend h5; }
+.h6 { @extend h6; }
 
 }
