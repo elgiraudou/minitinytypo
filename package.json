@@ -9,10 +9,9 @@
   },
   "homepage": "https://github.com/tcharlss/minitinytypo",
   "keywords": [
-    "html",
-    "css",
     "sass",
-    "typography"
+    "typography",
+    "vertical-rythm"
   ],
   "contributors": [
     "tetue",
