@@ -9,6 +9,7 @@ a {
   -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
   color: mtt(color-link);
   text-decoration: none;
+  transition: all 0.2s;
 
   &:visited {
     color: mtt(color-link);
@@ -20,7 +21,7 @@ a {
   }
 
   &:focus {
-    background-color: change-color(mtt(color-main), $lightness: 40%);
+    background-color: mtt(color-link-hover);
     color: white;
   }
 
