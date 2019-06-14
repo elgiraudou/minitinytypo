@@ -1,6 +1,6 @@
 {
   "name": "minitinytypo",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Mini Tiny Typo is a Sass typographical base for web content",
   "main": "_minitinytypo.scss",
   "repository": {
