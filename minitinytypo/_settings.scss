@@ -72,8 +72,8 @@ $minitinytypo-defaults: (
   font-family-text:      sans-serif,
   font-family-headings:  sans-serif,
   font-family-monospace: #{monospace, monospace}, // Corrects the inheritance and scaling of font size in all browsers.
-  font-size:             mtt-em(16px),
-  font-size-factor:      0.15,
+  font-size:             mtt-em(13px),
+  font-size-factor:      0.4,
   font-scale:            4,
   line-height:           1.5,
   proximity:             true,
