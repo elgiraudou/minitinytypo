@@ -1,0 +1,57 @@
+/**
+ * =======
+ * Helpers
+ * =======
+ *
+ * Utility classes.
+ * You can @extend theme or use the mixins in case the context is @media query (@extend doesn't work in that case).
+ */
+
+// Hides text in a accessible way
+// https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin visually-hidden() {
+  position: absolute !important;
+	height: 1px;
+	width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.visually-hidden {
+	@include visually-hidden;
+}
+
+// Cancels text hiding
+@mixin visually-visible() {
+  position: static !important;
+	height: initial;
+	width: initial;
+  overflow: visible;
+  clip: initial;
+}
+.visually-visible {
+	@include visually-visible;
+}
+
+// Makes an element full-width, regardless of its parents width.
+@mixin full-width() {
+	width: 100vw;
+	margin-left: 50% !important;
+	margin-right: 0 !important;
+	transform: translateX(-50%);
+}
+.full-width {
+	@include full-width;
+}
+
+// Makes an element fit its parent.
+// The parent is the first ancestor with position:relative
+@mixin absolute-fit() {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.absolute-fit {
+	@include absolute-fit;
+}
