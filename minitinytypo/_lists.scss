@@ -63,14 +63,15 @@ dd {
   margin-left: mtt(gutter);
 }
 
-// Old - don't use this
-.list-none {
+// Utilitary class
+@mixin list_none() {
   margin-left: 0;
   list-style: none;
-}
 
-.list-none li:before {
-  content: '';
+  li:before {
+    content: '';
+  }
 }
-
+.list_none {
+  @include list_none;
 }
