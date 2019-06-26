@@ -73,5 +73,7 @@ dd {
   }
 }
 .list_none {
-  @include list_none;
+  @include list-none;
+}
+
 }
