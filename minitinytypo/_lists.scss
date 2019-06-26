@@ -63,6 +63,8 @@ dd {
   margin-left: mtt(gutter);
 }
 
+}
+
 // Utilitary class
 @mixin list_none() {
   margin-left: 0;
@@ -73,7 +75,5 @@ dd {
   }
 }
 .list_none {
-  @include list-none;
-}
-
+  @include list_none;
 }
