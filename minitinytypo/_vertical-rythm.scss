@@ -38,7 +38,7 @@ $shevy: (
   base-font-scale:  $mtt-font-scale,
   margin-bottom:    true,
   proximity:        mtt(proximity),
-  proximity-factor: .85
+  proximity-factor: 0.85
 );
 
 // Body: sets font-size and line-height
@@ -52,7 +52,7 @@ body {
 @include headings;
 
 // Content: sets margin-bottom
-// @include content; // Disabled because not enough elements: https://github.com/kyleshevlin/shevy/issues/12
+// @include content; // Disabled because by default it lacks some elements: https://github.com/kyleshevlin/shevy/issues/12
 p,
 ul,
 ol,
@@ -65,7 +65,7 @@ fieldset,
 figure,
 table,
 hr {
-  margin-bottom: mtt(spacing);
+  margin-bottom: spacing();
 }
 
 }

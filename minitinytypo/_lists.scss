@@ -69,6 +69,7 @@ dd {
 @mixin list_none() {
   margin-left: 0;
   list-style: none;
+  list-style-type: none;
 
   li:before {
     content: '';

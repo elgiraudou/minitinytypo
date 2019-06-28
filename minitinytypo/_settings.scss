@@ -16,6 +16,7 @@
  * Available settings:
  *
  * OPTIONAL IMPORTS
+ *
  * vertical-rythm   (bool)
  * headings         (bool)
  * links            (bool)
@@ -27,18 +28,21 @@
  * print            (bool)
  *
  * COLORS
+ *
  * color-main       (color) Brand color
  * color-text       (color) Text color
  * color-link       (color) Links color
  * color-mid        (color) Medium gray and lines color
  *
  * FONT FAMILIES
+ *
  * font-family-text        (string) Main text body
  * font-family-headings    (string) Headings
  * font-monospace   (string) Code
  * 
  * TYPOGRAPHY & VERTICAL RYTHM
- * font-size        (size)        Base font size
+ *
+ * font-size        (size)        Base font size, MUST BE in em
  * font-size-factor (number)      Factor to increase the font-size responsively, usually between 0 and 1
  * line-height      (number)      Line height
  * font-scale       (number|list) Vertical rythm: defines the headings size incrementation
@@ -47,6 +51,7 @@
  * proximity (bool)               Vertical rythm: draw content closer together
  *
  * BREAKPOINTS
+ *
  * screen-small     (size) Mobile breakpoint
  * screen-medium    (size) Tablet breakpoint
  * screen-large     (size) Desktop breakpoint
@@ -83,8 +88,8 @@ $minitinytypo-defaults: (
 );
 $minitinytypo-defaults-plus: (
   color-link-hover:   map-get($minitinytypo-defaults, color-main),
-  spacing:            map-get($minitinytypo-defaults, line-height) * map-get($minitinytypo-defaults, font-size) / 1em * 1rem, // Vertical spacing
   gutter:             map-get($minitinytypo-defaults, line-height) * map-get($minitinytypo-defaults, font-size) / 1em * 1rem // Horizontal gutter
+  // spacing:            map-get($minitinytypo-defaults, line-height) * map-get($minitinytypo-defaults, font-size) / 1em * 1rem, // Vertical spacing
 );
 $minitinytypo-defaults: map-merge($minitinytypo-defaults-plus, $minitinytypo-defaults);
 

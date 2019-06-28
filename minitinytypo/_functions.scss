@@ -45,33 +45,38 @@
        Taille en em
  */
 @function mtt-em($pixels, $context: 16) {
-  @if (unitless($pixels)) {
+  @if unitless($pixels) {
     $pixels: $pixels * 1px;
   }
-  @if (unitless($context)) {
+  @if unitless($context) {
     $context: $context * 1px;
   }
   @return $pixels / $context * 1em;
 }
 
 /**
- * Returns the base vertical spacing
+ * Returns the base vertical spacing in rem, or optionnaly in em
  *
  * @access public
  * @example
  * margin-top: spacing(2);
+ * @param int $factor
+ * @param unit $unit
  */
-@function spacing($factor: 1) {
+@function spacing($factor: 1, $unit: rem) {
   $spacing: null;
   // Shevy's built-in function takes the proximity factor into account
-  @if (mtt(vertical-rythm)) {
+  @if mtt(vertical-rythm) {
     $spacing: base-spacing($factor);
   }
-  // Otherise let's do the math ourselves
+  // Otherise we do the math ourselves
   @else {
     $spacing: mtt(font-size) * mtt(line-height) * $factor;
   }
-  // Let's convert to rem
-  //$spacing: $spacing * 1em / 1rem;
+  // Let's convert the unit
+  @if $unit == rem {
+    $spacing: $spacing / 1em * 1rem;
+  }
+  
   @return $spacing;
 }
