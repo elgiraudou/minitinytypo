@@ -7,26 +7,26 @@
  * You can @extend theme or use the mixins in case the context is @media query (@extend doesn't work in that case).
  */
 
-// Hides text in a accessible way
+// Hides an element in a accessible way
 // https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 @mixin visually-hidden() {
   position: absolute !important;
 	height: 1px;
 	width: 1px;
   overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
+	clip-path: circle(0%);
 }
 .visually-hidden {
 	@include visually-hidden;
 }
 
-// Cancels text hiding
+// Cancels element hiding
 @mixin visually-visible() {
   position: static !important;
 	height: initial;
 	width: initial;
   overflow: visible;
-  clip: initial;
+  clip-path: initial;
 }
 .visually-visible {
 	@include visually-visible;
