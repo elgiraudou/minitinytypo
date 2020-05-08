@@ -10,8 +10,17 @@ var,
 samp,
 kbd,
 tt {
-  font-family: mtt(font-family-monospace);
   font-size: 1em;
+  @if mtt(font-family-monospace) {
+    font-family: mtt(font-family-monospace);
+  }
+  // Variable font
+  // https://www.zeichenschatz.net/typografie/implementing-a-variable-font-with-fallback-web-fonts.html
+  @if mtt(font-family-monospace-variable) {
+    @supports (font-variation-settings: normal) {
+      font-family: mtt(font-family-monospace-variable);
+    }
+  }
 }
 
 pre {

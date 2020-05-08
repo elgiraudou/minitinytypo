@@ -14,6 +14,15 @@ body {
   }
 }
 body {
-  font-family: mtt(font-family-text);
+  @if mtt(font-family-text) {
+    font-family: mtt(font-family-text);
+  }
+  // Variable font
+  // https://www.zeichenschatz.net/typografie/implementing-a-variable-font-with-fallback-web-fonts.html
+  @if mtt(font-family-text-variable) {
+    @supports (font-variation-settings: normal) {
+      font-family: mtt(font-family-text-variable);
+    }
+  }
   color: mtt(color-text);
 }

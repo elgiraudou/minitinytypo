@@ -74,6 +74,9 @@ $minitinytypo-defaults: (
   color-text:            hsla(  0,   0%, 15%, 1),
   color-border:          hsla(  0,   0%,  0%, 0.2),
   color-link:            inherit,
+  // font-family-text-variable:      sans-serif,
+  // font-family-headings-variable:  sans-serif,
+  // font-family-monospace-variable: #{monospace, monospace},
   font-family-text:      sans-serif,
   font-family-headings:  sans-serif,
   font-family-monospace: #{monospace, monospace}, // Corrects the inheritance and scaling of font size in all browsers.

@@ -15,7 +15,16 @@ h6 {
   display: block;
   padding: 0;
   font-weight: normal;
-  font-family: mtt(font-family-headings);
+  @if mtt(font-family-headings) {
+    font-family: mtt(font-family-headings);
+  }
+  // Variable font
+  // https://www.zeichenschatz.net/typografie/implementing-a-variable-font-with-fallback-web-fonts.html
+  @if mtt(font-family-headings-variable) {
+    @supports (font-variation-settings: normal) {
+      font-family: mtt(font-family-headings-variable);
+    }
+  }
 }
 
 h6 {
