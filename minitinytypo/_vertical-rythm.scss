@@ -41,9 +41,9 @@ $shevy: (
   proximity-factor: 0.85
 );
 
-// Body: sets font-size and line-height
+// Html element: sets font-size and line-height
 // @include body; // Disabled because we want our reponsive font-size
-body {
+html {
   font-size: mtt-font-size();
   line-height: mtt(line-height);
 }
