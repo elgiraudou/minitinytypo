@@ -30,7 +30,7 @@
     $font-size-fluid: calc(#{$base-font-size} + #{$font-size-factor});
     @return $font-size-fluid;
   }
-  @return $font-size-base;
+  @return $base-font-size;
 }
 
 /**
